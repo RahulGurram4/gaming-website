@@ -133,4 +133,4 @@ A fully modern, responsive, multi-page static website for a fictional **AWS-powe
 
 ---
 
-*© 2025 AWS Gaming. Built with ❤️ for the gaming community.*
+*© 2025 AWS Gaming. Built with ❤️ for the gaming community.**
