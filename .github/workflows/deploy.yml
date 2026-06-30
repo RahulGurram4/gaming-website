@@ -20,9 +20,10 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/html
-            sudo rm -rf *
-            git clone https://github.com/RahulGurram4/gaming-website.git temp
-            sudo cp -r temp/* .
-            sudo rm -rf temp
+            rm -rf /tmp/gaming-website
+            git clone https://github.com/RahulGurram4/gaming-website.git /tmp/gaming-website
+            sudo rm -rf /var/www/html/*
+            sudo cp -r /tmp/gaming-website/* /var/www/html/
+            sudo chown -R www-data:www-data /var/www/html
+            sudo chmod -R 755 /var/www/html
             sudo systemctl restart nginx
